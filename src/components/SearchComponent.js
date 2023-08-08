@@ -12,8 +12,8 @@ const SearchComponent = ({ searchQuery }) => {
   );
 
   return (
-    <div className='place-content:center'>
-     <div className=" w-half h-half bg-white/10 fixed z-10 top-10 py-12 grid md:grid-cols-4 gap-6 text-gray-500">
+    <div >
+     <div className=" w-half h-half bg-white/10 fixed z-10 top-10 right-20 py-12 grid md:grid-cols-4 gap-6 text-gray-500">
       {filteredName.length === 0 ? (
         <p className='font-bold text-2xl px-2 pt-4'><span>No matching products found</span></p> 
       ) : (
