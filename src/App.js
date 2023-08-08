@@ -4,19 +4,25 @@ import Hero from './components/Hero';
 import HeadlineCards from './components/HeadlineCards';
 import Food from './components/Food';
 import Category from './components/Category';
-import { Route } from 'react-router-dom';
-
+import { Route,Routes,BrowserRouter } from 'react-router-dom';
+import Cart from './components/Cart';
 
 function App() {
   return (
-    <div>
+    
+      <BrowserRouter>
        <Navbar/> 
        <Hero/>
        <HeadlineCards/>
        <Food/>
        <Category/>
-      
-    </div>
+       <div>
+       <Routes>
+       <Route path="/cart" exact element={<Cart />} />
+       </Routes>
+       </div>
+       </BrowserRouter>
+   
   );
 }
 
