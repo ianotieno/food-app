@@ -18,7 +18,7 @@ function App() {
        <Category/>
        <div>
        <Routes>
-       <Route path="/cart" exact element={<Cart />} />
+       <Route path= "/cart" element={<Cart />} />
        </Routes>
        </div>
        </BrowserRouter>
