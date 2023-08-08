@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import HeadlineCards from './components/HeadlineCards';
 import Food from './components/Food';
 import Category from './components/Category';
+import { Route } from 'react-router-dom';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
        <HeadlineCards/>
        <Food/>
        <Category/>
-       
+      
     </div>
   );
 }
