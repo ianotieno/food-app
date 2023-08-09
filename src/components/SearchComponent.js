@@ -16,7 +16,7 @@ const SearchComponent = ({ searchQuery }) => {
     <div >
      <div className=" w-half h-half bg-white/10 fixed z-10 top-10 right-20 py-12 grid md:grid-cols-4 gap-6 text-white">
       {filteredName.length === 0 ? (
-        <p className='font-bold text-2xl px-2 pt-4'><span>No matching products found</span></p> 
+        <p className='font-bold text-2xl px-2 pt-4 text-center right-20'><span>No matching products found</span></p> 
       ) : (
         filteredName.map((item,index) => (
           <div className='relative' key={index}>

@@ -13,7 +13,7 @@ const [searchQuery, setSearchQuery] = useState('');
 const { cartItems } = useContext(HotelContext)
   return (
     <>
-    <div className=' fixed max-w-[1640px] mx-auto z-10 flex justify-between items-center p-4 bg-white/10 '>
+    <div className='w-full mx-auto z-10 fixed flex justify-between items-center p-4 py-4 bg-white/10 '>
       
       <div className='flex items-center'>
         <div onClick={()=> setNav(!nav)} className='cursor-pointer'>
@@ -40,7 +40,7 @@ const { cartItems } = useContext(HotelContext)
         />
       </div>
       <Link to="/cart">
-      <button className='bg-black text-white hidden md:flex items-center py-2 rounded-full'>
+      <button className='bg-black text-white hidden md:flex items-center py-2  rounded-full'>
       <BsFillCartFill size={20} className='mr-2' />Cart:
       {Object.values(cartItems).reduce((acc, curr) => acc + curr, 0)}
       </button>
