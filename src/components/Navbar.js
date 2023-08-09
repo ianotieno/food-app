@@ -38,10 +38,11 @@ const [searchQuery, setSearchQuery] = useState('');
           onChange={e=>setSearchQuery(e.target.value)}
         />
       </div>
-      <Link to= "/cart"> 
+      <Link to="/cart">
       <button className='bg-black text-white hidden md:flex items-center py-2 rounded-full'>
       <BsFillCartFill size={20} className='mr-2' />Cart
-      </button></Link> 
+      </button>
+      </Link>
     
 
       {nav ? <div className='bg-black/80 fixed w-full h-screen z-10 top-0 left-0'></div> : ''}
