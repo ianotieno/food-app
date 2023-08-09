@@ -6,10 +6,10 @@ import Food from './components/Food';
 import Category from './components/Category';
 import { Route,Routes,BrowserRouter } from 'react-router-dom';
 import Cart from './components/Cart';
-
+import HotelContextProvider from './context/hotel-context';
 function App() {
   return (
-    
+    <HotelContextProvider>
       <BrowserRouter>
        <Navbar/> 
        <Hero/>
@@ -22,7 +22,7 @@ function App() {
        </Routes>
        </div>
        </BrowserRouter>
-   
+       </HotelContextProvider>
   );
 }
 
