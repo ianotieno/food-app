@@ -6,7 +6,7 @@ import { data } from '../data/data'
 import { CartItem } from './CartItems'
 
 const Cart = () => {
-  const {cartItems,  getTotalCartAmount }=useContext(HotelContext);
+  const {cartItems,  getTotalCartAmount,checkout }=useContext(HotelContext);
   const totalAmount =getTotalCartAmount();
   const navigate = useNavigate();
   return (
@@ -21,18 +21,27 @@ const Cart = () => {
         })}
         </div>
         
-        { totalAmount > 0 ? (
+        {totalAmount > 0 ? (
         <div className="checkout">
-          <div className="description"> <p><b>Subtotal Ksh:{totalAmount} </b></p></div>
-        <button  onClick={()=>navigate("/")}>Continue Shopping</button>
-        <button >checkout</button>
-       </div>
-       ) : (
-        <h1>Your Cart Is Empty</h1>
-       )}
+          <p> Subtotal: ${totalAmount} </p>
+          <button onClick={() => navigate("/")}> Continue Shopping </button>
+          <button
+            onClick={() => {
+              checkout();
+              navigate("/checkout");
+            }}
+          >
+            {" "}
+            Checkout{" "}
+          </button>
+        </div>
+      ) : (
+        <h1> Your Shopping Cart is Empty</h1>
+      )}
+    </div>
 
 </div>    
-</div>
+
  ) 
 
 }

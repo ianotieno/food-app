@@ -27,10 +27,12 @@ const HotelContextProvider = (props) => {
     const addToCart=(itemId)=>{
       setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}));
     };
+    const checkout = () => {
+      setCartItems(getDefaultCart());
+    };
     
     
-    
-    const contextValue={ cartItems , addToCart,getTotalCartAmount }
+    const contextValue={ cartItems , addToCart,getTotalCartAmount,checkout }
       return ( <HotelContext.Provider value={contextValue}>{props.children} </HotelContext.Provider>)
       
     
