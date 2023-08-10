@@ -3,6 +3,7 @@ import Food from './Food'
 import { HotelContext } from '../context/hotel-context'
 import{useNavigate} from "react-router-dom"
 import { data } from '../data/data'
+import { CartItem } from './CartItems'
 
 const Cart = () => {
   const {cartItems,  getTotalCartAmount }=useContext(HotelContext);
@@ -15,7 +16,7 @@ const Cart = () => {
        <div className="cartItems">
         {data.map((item)=>{
        if(cartItems[item.id]!==0){
-        return<Food data={item}/>
+        return<CartItem data={item}/>
        }
         })}
         </div>

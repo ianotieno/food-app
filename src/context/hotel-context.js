@@ -18,7 +18,7 @@ const HotelContextProvider = (props) => {
       let totalAmount=0;
       for(const item in cartItems){
         if(cartItems[item]>0){
-          let itemInfor =data.find((product)=>product.id===Number(item));
+          let itemInfor =data.find((items)=>items.id===Number(item));
           totalAmount+=cartItems[item]* itemInfor.price
         }
          }
@@ -28,15 +28,9 @@ const HotelContextProvider = (props) => {
       setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}));
     };
     
-    const removeFromCart=(itemId)=>{
-      setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}));
-    };
     
     
-     const updateCartItemCount=(newAmout,itemId)=>{
-      setCartItems((prev)=>({...prev,[itemId] : newAmout}));
-     };
-    const contextValue={ cartItems , addToCart , removeFromCart, updateCartItemCount ,getTotalCartAmount }
+    const contextValue={ cartItems , addToCart,getTotalCartAmount }
       return ( <HotelContext.Provider value={contextValue}>{props.children} </HotelContext.Provider>)
       
     

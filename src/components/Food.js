@@ -3,7 +3,8 @@ import {category, data} from '../data/data.js'
 import { HotelContext } from '../context/hotel-context'
 const Food = (props) => {
     const[foods, setFoods]=useState(data);
-    const {cartItems, addToCart , removeFromCart, updateCartItemCount}=useContext(HotelContext);
+    const { cartItems, addToCart }=useContext(HotelContext);
+    const cartItemCount = cartItems[data.id];
     const filterType=(category)=>{
       setFoods(
         data.filter((item)=>{
@@ -53,7 +54,7 @@ const Food = (props) => {
             <div className='flex justify-between px-3 py-4'>
               <p className='font-bold'>{item.name}</p>
               <p><span className='bg-orange-500 text-white p-1 rounded-full'>{item.price}</span></p>
-              <button  className='border-orange-500 bg-white text-black mx-2  bottom-4' onClick={()=>addToCart(item.id)}>Order Now</button>
+              <button  className='border-orange-500 bg-white text-black mx-2  bottom-4' onClick={()=>addToCart(item.id)}>Order Now {cartItemCount > 0 && <> ({cartItemCount})</>}</button>
             </div>
           </div> 
         ))}
