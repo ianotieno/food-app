@@ -11,9 +11,9 @@ const Cart = () => {
   const navigate = useNavigate();
   return (
     <div >
-    <div className=" w-half h-half bg-white/10 fixed z-10 top-10 right-10 py-12 grid md:grid-cols-4 gap-6 text-white">
+    <div className=" w-half h-half bg-white/10 fixed z-10 top-10 right-10 py-12 text-white">
        <p className='font-bold text-2xl px-2 pt-4 just'>Items In the Cart</p> 
-       <div className="cartItems">
+       <div className="grid md:grid-cols-4 gap-6 ">
         {data.map((item)=>{
        if(cartItems[item.id]!==0){
         return<CartItem data={item}/>

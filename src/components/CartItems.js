@@ -7,14 +7,13 @@ export const CartItem = (props) => {
     useContext(HotelContext);
 
   return (
-    <div className="cartItem md:grid-cols-4 gap-6 text-white">
+    <div>
+    <div className=" ">
+        <div className="relative">
       <img className='w-[60%] h-[350px] object-cover rounded-t-lg  md:max-h-[250px] 'src={image} alt={name} style={{ height: 70, width: 60 }} />
-      <div className="description">
-        <p>
-          <b>{name}</b>
-        </p>
-        <p> Price: ${price}</p>
-        <div className="countHandler">
+      <p className='font-bold text-2xl px-2 pt-4'><span> {name}</span></p>
+      <p className='font-bold text-orange-600 text-2xl px-2 pt-4'><span> {price}</span></p>
+       
           <button onClick={() => removeFromCart(id)}> - </button>
           <input
             value={cartItems[id]}
@@ -24,5 +23,6 @@ export const CartItem = (props) => {
         </div>
       </div>
     </div>
+   
   );
 };
