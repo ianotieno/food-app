@@ -14,13 +14,13 @@ export const CartItem = (props) => {
       <p className='font-bold text-2xl px-2 pt-4'><span> {name}</span></p>
       <p className='font-bold text-orange-600 text-2xl px-2 pt-4'><span> Ksh:{price}/=</span></p>
        
-      <button onClick={() => removeFromCart(id)}> - </button>
+      <button className='border-orange-500 bg-white text-black mx-2  bottom-4' onClick={() => addToCart(id)}> + </button>
           <input
-          className ='bg-transparent p-2 w-full focus:outline-none'
+          className ='bg-transparent p-1'
             value={cartItems[id]}
             onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
           />
-          <button onClick={() => addToCart(id)}> + </button>
+           <button className='border-orange-500 bg-white text-black mx-2  bottom-4' onClick={() => removeFromCart(id)}> - </button>
         </div>
       </div>
     </div>

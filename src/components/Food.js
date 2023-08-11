@@ -48,13 +48,13 @@ const Food = (props) => {
       {foods.map((item, index) => (
            
           <div key={index} className='border shadow-lg rounded-lg hover:scale-105 duration-300'>
-            <p className='font-bold'>{item.name}</p>
+            
             <img src={item.image} alt={item.name}
             className='w-full h-[200px] object-cover rounded-t-lg'
             
             />
             <div className='flex justify-between px-3 py-4'>
-              
+            <p className='font-bold'>{item.name}</p>
               <p><span className='bg-orange-500 text-white p-1 rounded-full'>Ksh:{item.price}/=</span></p>
               <button  className='border-orange-500 bg-white text-black mx-2  bottom-4' onClick={()=>addToCart(item.id)}>Order Now {cartItemCount > 0 && <> ({cartItemCount})</>}</button>
             </div>
