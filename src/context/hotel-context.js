@@ -1,8 +1,9 @@
 
 import { data } from '../data/data'
 import React, { createContext, useState } from 'react'
-export const HotelContext = createContext(null);
 
+
+export const HotelContext = createContext(null);
 
  const getDefaultCart=()=>{
     let cart={}
@@ -14,28 +15,48 @@ export const HotelContext = createContext(null);
 
 const HotelContextProvider = (props) => {
     const[cartItems,setCartItems]=useState(getDefaultCart());
+    
     const getTotalCartAmount=()=>{
       let totalAmount=0;
       for(const item in cartItems){
         if(cartItems[item]>0){
-          let itemInfor =data.find((items)=>items.id===Number(item));
+          let itemInfor =data.find((product)=>product.id===Number(item));
           totalAmount+=cartItems[item]* itemInfor.price
         }
          }
          return totalAmount;
     };
-    const addToCart=(itemId)=>{
-      setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}));
+    const addToCart = (itemId) => {
+      setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     };
+  
+    const removeFromCart = (itemId) => {
+      setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    };
+  
+    const updateCartItemCount = (newAmount, itemId) => {
+      setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
+    };
+  
     const checkout = () => {
       setCartItems(getDefaultCart());
     };
-    
-    
-    const contextValue={ cartItems , addToCart,getTotalCartAmount,checkout }
-      return ( <HotelContext.Provider value={contextValue}>{props.children} </HotelContext.Provider>)
+  
+    const contextValue = {
+      cartItems,
+      addToCart,
+      updateCartItemCount,
+      removeFromCart,
+      getTotalCartAmount,
+      checkout,
+    };
+  
+      return ( 
+      <HotelContext.Provider value={contextValue}>
+        {props.children} 
+      </HotelContext.Provider>);
       
     
-  }
+  };
   
 export default HotelContextProvider

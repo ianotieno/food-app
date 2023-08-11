@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { HotelContext } from '../context/hotel-context'
 
 export const CartItem = (props) => {
-  const { id, name, category, image,price } = props.data;
+  const { id, name, image,price } = props.data;
   const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
     useContext(HotelContext);
 
@@ -14,8 +14,9 @@ export const CartItem = (props) => {
       <p className='font-bold text-2xl px-2 pt-4'><span> {name}</span></p>
       <p className='font-bold text-orange-600 text-2xl px-2 pt-4'><span> {price}</span></p>
        
-          <button onClick={() => removeFromCart(id)}> - </button>
+      <button onClick={() => removeFromCart(id)}> - </button>
           <input
+          className ='bg-transparent p-2 w-full focus:outline-none'
             value={cartItems[id]}
             onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
           />

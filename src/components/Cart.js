@@ -1,5 +1,4 @@
 import React, { useContext} from 'react'
-import Food from './Food'
 import { HotelContext } from '../context/hotel-context'
 import{useNavigate} from "react-router-dom"
 import { data } from '../data/data'
@@ -10,13 +9,13 @@ const Cart = () => {
   const totalAmount =getTotalCartAmount();
   const navigate = useNavigate();
   return (
-    <div >
-    <div className=" w-half h-half bg-white/10 fixed z-10 top-10 right-10 py-12 text-white">
+ 
+    <div className=" w-half h-half bg-white fixed z-13 top-13 right-13 py-12 text-black">
        <p className='font-bold text-2xl px-2 pt-4 just'>Items In the Cart</p> 
        <div className="grid md:grid-cols-4 gap-6 ">
-        {data.map((item)=>{
-       if(cartItems[item.id]!==0){
-        return<CartItem data={item}/>
+        {data.map((product)=>{
+       if(cartItems[product.id]!==0){
+        return<CartItem data={product}/>;
        }
         })}
         </div>
@@ -37,10 +36,11 @@ const Cart = () => {
         </div>
       ) : (
         <h1> Your Shopping Cart is Empty</h1>
+        
       )}
     </div>
 
-</div>    
+   
 
  ) 
 
