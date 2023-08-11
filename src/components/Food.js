@@ -36,24 +36,26 @@ const Food = (props) => {
         <div>
           <p className='font-bold text-gray-700'>Filter Price</p>
           <div className='flex justify-between max-w-[390px] w-ful'>
-            <button onClick={()=>filterPrice('Ksh:100/=')}  className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white' >ksh:100</button>
-            <button onClick={()=>filterPrice('Ksh:200/=')} className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>ksh:200</button>
-            <button onClick={()=>filterPrice('Ksh:300/=')} className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>ksh:300</button>
-            <button onClick={()=>filterPrice('Ksh:400/=')} className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>ksh:400</button>
+            <button onClick={()=>filterPrice('100')}  className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white' >Ksh:100</button>
+            <button onClick={()=>filterPrice('200')} className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>Ksh:200</button>
+            <button onClick={()=>filterPrice('300')} className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>Ksh:300</button>
+            <button onClick={()=>filterPrice('400')} className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>Ksh:400</button>
           </div>
         </div>
       </div>
       
       <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>
       {foods.map((item, index) => (
+           
           <div key={index} className='border shadow-lg rounded-lg hover:scale-105 duration-300'>
+            <p className='font-bold'>{item.name}</p>
             <img src={item.image} alt={item.name}
             className='w-full h-[200px] object-cover rounded-t-lg'
             
             />
             <div className='flex justify-between px-3 py-4'>
-              <p className='font-bold'>{item.name}</p>
-              <p><span className='bg-orange-500 text-white p-1 rounded-full'>{item.price}</span></p>
+              
+              <p><span className='bg-orange-500 text-white p-1 rounded-full'>Ksh:{item.price}/=</span></p>
               <button  className='border-orange-500 bg-white text-black mx-2  bottom-4' onClick={()=>addToCart(item.id)}>Order Now {cartItemCount > 0 && <> ({cartItemCount})</>}</button>
             </div>
           </div> 

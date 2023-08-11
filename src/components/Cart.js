@@ -10,7 +10,7 @@ const Cart = () => {
   const navigate = useNavigate();
   return (
  
-    <div className=" w-half h-half bg-white fixed z-13 top-13 right-13 py-12 text-black">
+    <div className=" w-half h-half bg-white fixed z-10 top-10 right-10 py-12 text-black">
        <p className='font-bold text-2xl px-2 pt-4 just'>Items In the Cart</p> 
        <div className="grid md:grid-cols-4 gap-6 ">
         {data.map((product)=>{
@@ -22,7 +22,7 @@ const Cart = () => {
         
         {totalAmount > 0 ? (
         <div className="checkout">
-          <p> Subtotal: ${totalAmount} </p>
+          <p> Subtotal: Ksh:{totalAmount}/= </p>
           <button onClick={() => navigate("/")}> Continue Shopping </button>
           <button
             onClick={() => {

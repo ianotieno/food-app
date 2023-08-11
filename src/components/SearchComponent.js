@@ -3,7 +3,7 @@ import { data } from '../data/data.js';
 import { HotelContext } from '../context/hotel-context'
 
 const SearchComponent = ({ searchQuery }) => {
-  const {cartItems, addToCart , removeFromCart, updateCartItemCount}=useContext(HotelContext);
+  const { addToCart }=useContext(HotelContext);
   if (!searchQuery.trim()) {
     return null;
   }
