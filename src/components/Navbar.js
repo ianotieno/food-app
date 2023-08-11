@@ -41,7 +41,7 @@ const { cartItems } = useContext(HotelContext)
       </div>
       <Link to="/cart">
       <button className='bg-black text-white hidden md:flex items-center py-2  rounded-full'>
-      <BsFillCartFill size={20} className='mr-2' />Items in Cart:
+      <BsFillCartFill size={20} className='mr-2' />Orders:
       {Object.values(cartItems).reduce((acc, curr) => acc + curr)}
       </button>
       </Link>
