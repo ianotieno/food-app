@@ -10,7 +10,7 @@ const Cart = () => {
   const navigate = useNavigate();
   return (
  
-    <div className=" w-full mx-auto bg-white fixed z-10 top-10 right-0 py-12 text-black">
+    <div className=" w-full mx-auto bg-white fixed z-10 top-16  py-12 text-black">
        <p className='text-orange-600 font-bold text-4xl text-center'>Orders In the Cart</p> 
        <div className="grid md:grid-cols-4 gap-6 ">
         {data.map((product)=>{

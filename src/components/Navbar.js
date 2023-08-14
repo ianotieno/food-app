@@ -32,7 +32,7 @@ const { cartItems } = useContext(HotelContext)
       <div className='bg-gray-200 rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]'>
         <AiOutlineSearch size={25} />
         <input
-          className='bg-transparent p-2 w-full focus:outline-none'
+          className='bg-transparent p-1 w-half text-center'
           type='text'
           placeholder='Search foods'
           value={searchQuery}
