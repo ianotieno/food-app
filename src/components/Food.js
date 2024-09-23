@@ -44,7 +44,7 @@ const Food = (props) => {
         </div>
       </div>
       
-      <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>
+      <div className='max-w-[1640px] mx-auto p-4 py-12 grid md:grid-cols-3 gap-6'>
       {foods.map((item, index) => (
            
           <div key={index} className='border shadow-lg rounded-lg hover:scale-105 duration-300'>
